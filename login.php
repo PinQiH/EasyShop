@@ -12,17 +12,17 @@
 
     <!-- 登錄表單 -->
     <div class="container">
-        <h1>登錄</h1>
+        <h1>登入</h1>
         <form action="login_process.php" method="post">
             <div class="form-group">
-                <label for="username">用戶名：</label>
-                <input type="text" id="username" name="username" required>
+                <label for="email">Email：</label>
+                <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="password">密碼：</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button type="submit">登錄</button>
+            <button type="submit">登入</button>
         </form>
     </div>
 

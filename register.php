@@ -19,12 +19,12 @@
                 <input type="text" id="username" name="username" required>
             </div>
             <div class="form-group">
-                <label for="password">密碼：</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
                 <label for="email">郵箱：</label>
                 <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">密碼：</label>
+                <input type="password" id="password" name="password" required>
             </div>
             <button type="submit">註冊</button>
         </form>

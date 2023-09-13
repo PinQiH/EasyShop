@@ -1,0 +1,198 @@
+/* 重置默認樣式 */
+body,
+h1,
+h2,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* 設定頁面背景色和字體 */
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+/* 頭部樣式 */
+header {
+    background-color: #333;
+    /* 設定背景顏色 */
+    color: #fff;
+    /* 設定文字顏色 */
+    padding: 10px 0;
+    /* 上下內邊距為10px，左右內邊距為0 */
+}
+
+/* 導航樣式 */
+nav ul {
+    list-style: none;
+    /* 移除列表樣式 */
+    text-align: center;
+    /* 文字居中對齊 */
+}
+
+nav ul li {
+    display: inline-block;
+    /* 水平排列導航項目 */
+    margin-right: 20px;
+    /* 項目之間的右邊距 */
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+    /* 最後一個項目的右邊距為0，以消除多餘的間距 */
+}
+
+nav ul li a {
+    text-decoration: none;
+    /* 移除連結底線 */
+    color: #fff;
+    /* 設定連結文字顏色 */
+    font-weight: bold;
+    /* 設定連結文字粗體 */
+    font-size: 16px;
+    /* 設定連結文字大小 */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    /* 滑鼠懸停時顯示底線 */
+}
+
+/* 主容器樣式 */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 產品卡片樣式 */
+.product-card {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+/* 圖像樣式 - 設定所有圖像的寬度和高度 */
+.product-card img {
+    width: 45%;
+    /* 圖像寬度為容器寬度的45% */
+    height: auto;
+    /* 讓圖像按比例縮放 */
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* 頁尾樣式 */
+footer {
+    background-color: #333;
+    /* 設定背景顏色 */
+    color: #fff;
+    /* 設定文字顏色 */
+    padding: 10px 0;
+    /* 上下內邊距為10px，左右內邊距為0 */
+}
+
+/* 頁腳容器樣式 */
+footer .container {
+    max-width: 800px;
+    /* 設定容器最大寬度 */
+    margin: 0 auto;
+    /* 水平居中對齊容器 */
+    text-align: center;
+    /* 文字居中對齊 */
+}
+
+/* 版權信息樣式 */
+footer p {
+    font-size: 14px;
+    /* 設定文字大小 */
+    margin-bottom: 10px;
+    /* 底部外邊距 */
+}
+
+/* 鏈接樣式 */
+.footer-links {
+    list-style: none;
+    /* 移除列表樣式 */
+    padding: 0;
+    /* 移除內邊距 */
+}
+
+.footer-links li {
+    display: inline;
+    /* 內聯顯示鏈接 */
+    margin-right: 10px;
+    /* 右邊距 */
+}
+
+.footer-links a {
+    text-decoration: none;
+    /* 移除鏈接下劃線 */
+    color: #fff;
+    /* 設定鏈接文字顏色 */
+    font-size: 14px;
+    /* 設定鏈接文字大小 */
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    /* 滑鼠懸停時顯示下劃線 */
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* 響應式佈局 */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .product-card {
+        margin: 5px;
+    }
+}

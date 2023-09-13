@@ -5,6 +5,9 @@ $username = 'root'; // 你的數據庫用戶名
 $password = 'Root520608'; // 你的數據庫密碼
 $database = 'EasyShop'; // 你的數據庫名稱
 
+//圖片儲存位置
+$base_url = './assets/';
+
 // 建立數據庫連接
 $connection = mysqli_connect($hostname, $username, $password, $database);
 
