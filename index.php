@@ -1,3 +1,7 @@
+<?php
+    include('include/config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,9 +23,36 @@
         <h2>最新產品</h2>
         <div class="product-list">
             <?php
-            // 在這裡使用PHP從數據庫檢索並顯示最新的產品
-            // 例如：$products = getLatestProducts();
-            // 迭代$products並顯示每個產品的信息
+            // 查詢資料庫以獲取最新的產品，假設按照創建日期降序排序，並且限制顯示5個最新的產品
+            $query = "SELECT * FROM products ORDER BY created_at DESC LIMIT 5";
+
+            // 執行查詢
+            $result = mysqli_query($connection, $query);
+
+            // 檢查查詢是否成功
+            if ($result) {
+                // 循環遍歷查詢結果並顯示每個產品的信息
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $productName = $row['name'];
+                    $productDescription = $row['description'];
+                    $productImage = $row['product_image'];
+                    $productPrice = $row['price'];
+
+                    // 在這裡使用提取的產品信息建立產品卡片的HTML
+                    echo '<div class="product-card">';
+                    echo '<img src="' . $productImage . '" alt="' . $productName . '">';
+                    echo '<h3>' . $productName . '</h3>';
+                    echo '<p>' . $productDescription . '</p>';
+                    echo '<p>價格: ' . $productPrice . ' 台幣</p>';
+                    echo '</div>';
+                }
+
+                // 釋放查詢結果集
+                mysqli_free_result($result);
+            } else {
+                // 查詢失敗時的處理
+                echo '無法檢索最新產品。';
+            }
             ?>
         </div>
     </div>
