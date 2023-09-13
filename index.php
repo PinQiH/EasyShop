@@ -33,6 +33,7 @@
             if ($result) {
                 // 循環遍歷查詢結果並顯示每個產品的信息
                 while ($row = mysqli_fetch_assoc($result)) {
+                    $productId = $row['product_id'];
                     $productName = $row['name'];
                     $productDescription = $row['description'];
                     $productImage = $row['product_image'];
@@ -40,7 +41,7 @@
                     $productPrice = $row['price'];
 
                     // 在這裡使用提取的產品信息建立產品卡片的HTML
-                    echo '<div class="product-card">';
+                    echo '<div class="product-card" data-product-id="' . $productId . '">';     
                     echo '<img src="' . $imageUrl . '" alt="' . $productName . '">';
                     echo '<h3>' . $productName . '</h3>';
                     echo '<p>' . $productDescription . '</p>';
