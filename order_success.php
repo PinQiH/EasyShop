@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="5;url=index.php">
-    <title>訂單提交成功 - 易購 (EasyShop)</title>
+    <title>訂單提交成功 - ScentSelect</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>

@@ -19,7 +19,7 @@ if (isset($_SESSION['user_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>結帳 - 易購 (EasyShop)</title>
+    <title>結帳 - ScentSelect</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>

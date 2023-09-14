@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id']) && isse
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>購物車 - 易購 (EasyShop)</title>
+    <title>購物車 - ScentSelect</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>

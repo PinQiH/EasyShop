@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>易購 (EasyShop)</title>
+    <title>ScentSelect</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -16,8 +16,7 @@
 
     <!-- 首頁內容 -->
     <div class="container">
-        <h1>歡迎來到易購 (EasyShop)</h1>
-        <p>簡約質感的購物網站，提供您最優質的購物體驗。</p>
+        <h1>ScentSelect</h1>
 
         <!-- 最新產品列表 -->
         <h2>最新產品</h2>

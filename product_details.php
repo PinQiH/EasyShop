@@ -41,7 +41,7 @@ function getProductDetails($productId) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>產品詳情 - 易購 (EasyShop)</title>
+    <title>產品詳情 - ScentSelect</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>

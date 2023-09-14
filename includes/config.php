@@ -19,6 +19,3 @@ if (!$connection) {
 // 設定字符集
 mysqli_set_charset($connection, 'utf8');
 
-// 定義全局變數或其他全局設置
-$siteName = '易購 (EasyShop)';
-$siteURL = 'http://localhost/easyshop'; // 根據你的實際設定進行調整
