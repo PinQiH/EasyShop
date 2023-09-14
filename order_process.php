@@ -31,11 +31,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delivery_address'])) 
                 $quantity = $cartItem['quantity'];
                 $subtotal = $cartItem['price'] * $quantity;
 
-                $insertOrderDetailQuery = "INSERT INTO order_details (order_id, product_id, quantity, subtotal) VALUES (?, ?, ?, ?)";
-                $stmt = mysqli_prepare($connection, $insertOrderDetailQuery);
-                mysqli_stmt_bind_param($stmt, "iiid", $orderId, $product_id, $quantity, $subtotal);
-                mysqli_stmt_execute($stmt);
-                mysqli_stmt_close($stmt);
+                // 檢查商品庫存是否足夠
+                $checkStockQuery = "SELECT stock_quantity FROM products WHERE product_id = ?";
+                $checkStmt = mysqli_prepare($connection, $checkStockQuery);
+                mysqli_stmt_bind_param($checkStmt, "i", $product_id);
+                mysqli_stmt_execute($checkStmt);
+                mysqli_stmt_store_result($checkStmt);
+
+                if (mysqli_stmt_num_rows($checkStmt) == 1) {
+                    mysqli_stmt_bind_result($checkStmt, $stock_quantity);
+                    mysqli_stmt_fetch($checkStmt);
+
+                    if ($stock_quantity >= $quantity) {
+                        // 庫存足夠，更新庫存並插入訂單詳情
+                        $updateStockQuery = "UPDATE products SET stock_quantity = stock_quantity - ? WHERE product_id = ?";
+                        $updateStmt = mysqli_prepare($connection, $updateStockQuery);
+                        mysqli_stmt_bind_param($updateStmt, "ii", $quantity, $product_id);
+                        mysqli_stmt_execute($updateStmt);
+                        mysqli_stmt_close($updateStmt);
+
+                        // 插入訂單詳情
+                        $insertOrderDetailQuery = "INSERT INTO order_details (order_id, product_id, quantity, subtotal) VALUES (?, ?, ?, ?)";
+                        $stmt = mysqli_prepare($connection, $insertOrderDetailQuery);
+                        mysqli_stmt_bind_param($stmt, "iiid", $orderId, $product_id, $quantity, $subtotal);
+                        mysqli_stmt_execute($stmt);
+                        mysqli_stmt_close($stmt);
+                    } else {
+                        // 庫存不足，處理庫存不足的情況
+                        echo '<script>alert("商品 ' . $cartItem['name'] . ' 庫存不足。");</script>';
+                        header("Location: checkout.php");
+                        exit;
+                    }
+                } else {
+                    // 未找到商品，處理商品不存在的情況
+                    echo '<script>alert("商品 ' . $cartItem['name'] . ' 不存在。");</script>';
+                    header("Location: checkout.php");
+                    exit;
+                }
+                mysqli_stmt_close($checkStmt);
             }
         }
 
