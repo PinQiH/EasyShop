@@ -8,6 +8,7 @@
             <?php
             // 檢查用戶是否已登入，如果是，顯示登出按鈕，否則顯示登入和註冊按鈕
             if (isset($_SESSION['user_id'])) {
+                echo '<li><a href="account.php">帳戶管理</a></li>';
                 echo '<li><a href="logout.php">登出</a></li>';
             } else {
                 echo '<li><a href="login.php">登入</a></li>';

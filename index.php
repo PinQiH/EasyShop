@@ -1,5 +1,8 @@
 <?php
     include('./includes/config.php');
+
+    // 開始或恢復會話
+    session_start();
 ?>
 
 <!DOCTYPE html>

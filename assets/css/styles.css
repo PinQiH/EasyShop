@@ -238,6 +238,10 @@ img {
     /* 水平置中 */
     border-radius: 10px;
     /* 設定圓角半徑，根據需要調整 */
+    max-width: 300px;
+    /* 最大寬度為300像素 */
+    max-height: 300px;
+    /* 最大高度為300像素 */
 }
 
 /* 數量輸入框樣式 */
@@ -370,6 +374,37 @@ th {
     /* 行高 */
     margin-bottom: 10px;
     /* 底部間距 */
+}
+
+.order-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+    /* 當滑鼠懸停時，卡片向上浮動5像素 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* 添加陰影效果 */
+}
+
+.order-card p {
+    margin: 5px 0;
+}
+
+.order-card strong {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.order-history {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* 響應式佈局 */

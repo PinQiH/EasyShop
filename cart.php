@@ -66,10 +66,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id']) && isse
         // 將產品添加到購物車
         $_SESSION['cart'][] = $cartItem;
 
-        // 提示用戶產品已成功添加到購物車
-        echo '<script>alert("產品已成功添加到購物車。");</script>';
+        echo '<script>';
+        echo 'alert("產品已成功添加到購物車。");';
+        echo 'window.location.href = "products.php";';
+        echo '</script>';
     } else {
-        echo '<script>alert("產品未找到。");</script>';
+        echo '<script>';
+        echo 'alert("產品未找到。");';
+        echo '</script>';
     }
 }
 ?>

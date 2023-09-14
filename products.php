@@ -2,6 +2,9 @@
 // 包含資料庫連接設定
 include('includes/config.php');
 
+// 開始或恢復會話
+session_start();
+
 // 定義函數以從資料庫獲取產品列表
 function getProducts() {
     global $connection; // 使用全局連接物件
