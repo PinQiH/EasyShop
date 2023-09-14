@@ -45,33 +45,63 @@ function getProducts() {
     <!-- 產品目錄內容 -->
     <div class="container">
         <h1>產品目錄</h1>
-        <div class="product-list">
+
+        <!-- 搜尋表單 -->
+        <form action="products.php" method="GET">
+            <input type="text" name="query" placeholder="輸入關鍵字">
+            <button type="submit">搜尋</button>
+        </form>
+
+        <div id="search-results">
+            <!-- 這裡將顯示搜索結果 -->
             <?php
-            $products = getProducts();
+            if (isset($_GET['query'])) {
+                // 執行搜索並顯示搜索結果
+                $searchQuery = mysqli_real_escape_string($connection, $_GET['query']);
+                $query = "SELECT * FROM products WHERE name LIKE '%$searchQuery%'";
+                $result = mysqli_query($connection, $query);
 
-            // 檢查是否有產品可供顯示
-            if ($products && count($products) > 0) {
-                foreach ($products as $product) {
-                    // 提取產品資訊
-                    $productId = $product['product_id'];
-                    $productName = $product['name'];
-                    $productDescription = $product['description'];
-                    $productImage = $product['product_image'];
-                    $productImage = $product['product_image'];
-                    $imageUrl = $base_url . $productImage;
-                    $productPrice = $product['price'];
-
-                    // 在這裡使用提取的產品信息建立產品卡片的HTML
-                    echo '<div class="product-card" data-product-id="' . $productId . '">';
-                    echo '<img src="' . $imageUrl . '" alt="' . $productImage . '">';
-                    echo '<h3>' . $productName . '</h3>';
-                    echo '<p>' . $productDescription . '</p>';
-                    echo '<p>價格: ' . $productPrice . ' 台幣</p>';
-                    echo '</div>';
+                if ($result && mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $imageUrl = $base_url . $row['product_image'];
+                        // 顯示搜索結果的產品卡片
+                        echo '<div class="product-card" data-product-id="' . $row['product_id'] . '">';
+                        echo '<img src="' . $imageUrl . '" alt="' . $row['name'] . '">';
+                        echo '<h3>' . $row['name'] . '</h3>';
+                        echo '<p>' . $row['description'] . '</p>';
+                        echo '<p>$' . $row['price'] . '</p>';
+                        echo '</div>';
+                    }
+                } else {
+                    echo '<p>未找到符合搜尋條件的產品。</p>';
                 }
             } else {
-                // 如果沒有可用的產品，顯示相應的消息
-                echo '目前沒有可用的產品。';
+                // 沒有搜尋時，顯示所有商品
+                $products = getProducts();
+
+                if ($products && count($products) > 0) {
+                    foreach ($products as $product) {
+                        // 提取產品資訊
+                        $productId = $product['product_id'];
+                        $productName = $product['name'];
+                        $productDescription = $product['description'];
+                        $productImage = $product['product_image'];
+                        $productImage = $product['product_image'];
+                        $imageUrl = $base_url . $productImage;
+                        $productPrice = $product['price'];
+
+                        // 在這裡使用提取的產品信息建立產品卡片的HTML
+                        echo '<div class="product-card" data-product-id="' . $productId . '">';
+                        echo '<img src="' . $imageUrl . '" alt="' . $productImage . '">';
+                        echo '<h3>' . $productName . '</h3>';
+                        echo '<p>' . $productDescription . '</p>';
+                        echo '<p>$' . $productPrice . '</p>';
+                        echo '</div>';
+                    }
+                } else {
+                    // 如果沒有可用的產品，顯示相應的消息
+                    echo '目前沒有可用的產品。';
+                }
             }
             ?>
         </div>

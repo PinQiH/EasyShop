@@ -34,18 +34,17 @@
                 while ($row = mysqli_fetch_assoc($result)) {
                     $productId = $row['product_id'];
                     $productName = $row['name'];
-                    $productDescription = $row['description'];
                     $productImage = $row['product_image'];
                     $imageUrl = $base_url . $productImage;
                     $productPrice = $row['price'];
 
                     // 在這裡使用提取的產品信息建立產品卡片的HTML
+                    echo '<div class="latest-products">';
                     echo '<div class="product-card" data-product-id="' . $productId . '">';     
                     echo '<img src="' . $imageUrl . '" alt="' . $productName . '">';
                     echo '<h3>' . $productName . '</h3>';
-                    echo '<p>' . $productDescription . '</p>';
-                    echo '<p>價格: ' . $productPrice . ' 台幣</p>';
-                    echo '</div>';
+                    echo '<p>$' . $productPrice . '</p>';
+                    echo '</div></div>';
                 }
 
                 // 釋放查詢結果集

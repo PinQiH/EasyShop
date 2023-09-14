@@ -9,16 +9,17 @@ p {
 
 /* 設定頁面背景色和字體 */
 body {
-    background-color: #f5f5f5;
+    background-color: #F4EEEE;
+    /* 淺粉紅背景 */
     font-family: Arial, sans-serif;
 }
 
 /* 頭部樣式 */
 header {
-    background-color: #333;
-    /* 設定背景顏色 */
+    background-color: #FFB7B7;
+    /* 深粉紅背景 */
     color: #fff;
-    /* 設定文字顏色 */
+    /* 白色文字 */
     padding: 10px 0;
     /* 上下內邊距為10px，左右內邊距為0 */
 }
@@ -47,7 +48,7 @@ nav ul li a {
     text-decoration: none;
     /* 移除連結底線 */
     color: #fff;
-    /* 設定連結文字顏色 */
+    /* 白色文字 */
     font-weight: bold;
     /* 設定連結文字粗體 */
     font-size: 16px;
@@ -64,15 +65,31 @@ nav ul li a:hover {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: #fff;
+    /* 白色背景 */
+    border-radius: 10px;
+    /* 圓角邊框 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* 柔和的陰影效果 */
 }
 
 /* 產品卡片樣式 */
 .product-card {
-    border: 1px solid #ddd;
+    border: 1px solid #FFDBAA;
+    /* 淡粉紅邊框 */
     background-color: #fff;
+    /* 白色背景 */
     padding: 10px;
     margin: 10px;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    /* 當滑鼠懸停時，卡片向上浮動5像素 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* 添加陰影效果 */
 }
 
 /* 圖像樣式 - 設定所有圖像的寬度和高度 */
@@ -90,16 +107,15 @@ nav ul li a:hover {
 
 /* 頁尾樣式 */
 footer {
-    background-color: #333;
-    /* 設定背景顏色 */
+    background-color: #96C291;
     color: #fff;
-    /* 設定文字顏色 */
+    /* 白色文字 */
     padding: 10px 0;
     /* 上下內邊距為10px，左右內邊距為0 */
 }
 
 /* 頁腳容器樣式 */
-footer .container {
+.footer_container {
     max-width: 800px;
     /* 設定容器最大寬度 */
     margin: 0 auto;
@@ -135,7 +151,7 @@ footer p {
     text-decoration: none;
     /* 移除鏈接下劃線 */
     color: #fff;
-    /* 設定鏈接文字顏色 */
+    /* 白色文字 */
     font-size: 14px;
     /* 設定鏈接文字大小 */
 }
@@ -149,6 +165,8 @@ h1 {
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
+    color: #333;
+    /* 設定標題文字顏色 */
 }
 
 .form-group {
@@ -159,6 +177,8 @@ label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
+    color: #333;
+    /* 設定標籤文字顏色 */
 }
 
 input {
@@ -167,13 +187,16 @@ input {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+    color: #555;
+    /* 設定輸入框文字顏色 */
 }
 
 button {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #FFB7B7;
+    /* 深粉紅按鈕背景 */
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -183,7 +206,8 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #FF6B6B;
+    /* 深粉紅懸停時背景 */
 }
 
 img {
@@ -196,15 +220,15 @@ img {
 .price {
     font-weight: bold;
     font-size: 18px;
-    color: #ff6600;
-    /* 自訂價格文本顏色 */
+    color: #FF7043;
+    /* 使用較深的橙色文本顏色 */
 }
 
 /* 庫存數量樣式 */
 .stock {
     font-size: 16px;
-    color: #0066cc;
-    /* 自訂庫存文本顏色 */
+    color: #FFB7B7;
+    /* 保持庫存文本的淺粉紅色 */
 }
 
 /* 產品圖片居中 */
@@ -219,7 +243,7 @@ img {
 
 /* 數量輸入框樣式 */
 input[type="number"] {
-    width: 50px;
+    width: 98%;
     padding: 5px;
     font-size: 16px;
 }
@@ -233,7 +257,7 @@ table {
 table,
 th,
 td {
-    border: 1px solid #ddd;
+    border: 1px solid #FFDBAA;
 }
 
 th,
@@ -243,7 +267,8 @@ td {
 }
 
 th {
-    background-color: #f5f5f5;
+    background-color: #FFB7B7;
+    /* 深粉紅表頭背景 */
 }
 
 .cart-image {
@@ -266,7 +291,8 @@ th {
     margin: 20px auto;
     padding: 10px;
     text-align: center;
-    background-color: #007bff;
+    background-color: #FFB7B7;
+    /* 深粉紅按鈕背景 */
     color: #fff;
     text-decoration: none;
     border: none;
@@ -274,11 +300,16 @@ th {
 }
 
 .delete-button {
-    background-color: #ff0000;
+    background-color: #FF6B6B;
+    /* 深粉紅刪除按鈕背景 */
+}
+
+.delete-button:hover {
+    background-color: #FF4040;
 }
 
 .payment-info-box {
-    background-color: #f0f0f0;
+    background-color: #F4EEEE;
     /* 灰色底色 */
     padding: 20px;
     border-radius: 5px;

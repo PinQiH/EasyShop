@@ -13,10 +13,7 @@ window.addEventListener('load', function () {
             window.location.href = 'product_details.php?product_id=' + productId;
         });
     });
-});
 
-// 等待頁面載入完畢後執行腳本
-$(document).ready(function () {
     // 獲取所有刪除按鈕
     const deleteButtons = document.querySelectorAll('.delete-button');
 
