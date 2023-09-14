@@ -101,8 +101,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id']) && isse
             foreach ($_SESSION['cart'] as $key => $cartItem) {
                 $subtotal = $cartItem['price'] * $cartItem['quantity'];
                 echo '<tr>';
-                echo '<td><img src="' . $base_url . $cartItem['product_image'] . '" alt="' . $cartItem['name'] . '" class="cart-image"></td>';
-                echo '<td>' . $cartItem['name'] . '</td>';
+                echo '<td><a class="link" href="product_details.php?product_id=' . $cartItem['product_id'] . '"><img src="' . $base_url . $cartItem['product_image'] . '" alt="' . $cartItem['name'] . '" class="cart-image"></a></td>';
+                echo '<td><a class="link" href="product_details.php?product_id=' . $cartItem['product_id'] . '">' . $cartItem['name'] . '</a></td>';
                 echo '<td>' . $cartItem['quantity'] . '</td>';
                 echo '<td>$' . $cartItem['price'] . '</td>';
                 echo '<td>$' . $subtotal . '</td>';

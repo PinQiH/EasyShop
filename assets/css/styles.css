@@ -111,7 +111,6 @@ footer {
     color: #fff;
     /* 白色文字 */
     padding: 10px 0;
-    /* 上下內邊距為10px，左右內邊距為0 */
 }
 
 /* 頁腳容器樣式 */
@@ -324,6 +323,53 @@ th {
 .payment-info-box p {
     font-size: 14px;
     margin: 5px 0;
+}
+
+.link {
+    color: #495057;
+    /* 鏈接文本顏色 */
+    text-decoration: none;
+    /* 刪除下劃線 */
+    transition: color 0.3s;
+    /* 平滑過渡顏色效果 */
+}
+
+/* 鼠標懸停在連結上的樣式 */
+.link:hover {
+    color: #6C757D;
+    /* 懸停時的文本顏色 */
+}
+
+/* 品牌介紹樣式 */
+.brand-introduction {
+    background-color: #f9f9f9;
+    /* 背景顏色 */
+    padding: 20px;
+    /* 內邊距 */
+    border: 1px solid #ddd;
+    /* 邊框 */
+    border-radius: 5px;
+    /* 圓角 */
+}
+
+.brand-introduction h2 {
+    font-size: 24px;
+    /* 標題文字大小 */
+    color: #333;
+    /* 標題文字顏色 */
+    margin-bottom: 10px;
+    /* 底部間距 */
+}
+
+.brand-introduction p {
+    font-size: 16px;
+    /* 段落文字大小 */
+    color: #666;
+    /* 段落文字顏色 */
+    line-height: 1.5;
+    /* 行高 */
+    margin-bottom: 10px;
+    /* 底部間距 */
 }
 
 /* 響應式佈局 */
