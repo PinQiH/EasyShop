@@ -10,6 +10,7 @@ session_start();
     <meta http-equiv="refresh" content="3;url=index.php">
     <title>訂單提交成功 - ScentSelect</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="./assets/images/scentselect-logo-color.png" type="image/x-icon">
 </head>
 <body>
     <!-- 網站頂部 -->

@@ -21,6 +21,7 @@ if (isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>結帳 - ScentSelect</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="./assets/images/scentselect-logo-color.png" type="image/x-icon">
 </head>
 <body>
     <!-- 網站頂部 -->

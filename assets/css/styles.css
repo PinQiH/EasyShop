@@ -9,6 +9,7 @@ p {
 
 /* 設定頁面背景色和字體 */
 body {
+    margin-top: 90px;
     background-color: #F4EEEE;
     /* 淺粉紅背景 */
     font-family: Arial, sans-serif;
@@ -16,12 +17,38 @@ body {
 
 /* 頭部樣式 */
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #FFB7B7;
     /* 深粉紅背景 */
     color: #fff;
     /* 白色文字 */
-    padding: 10px 0;
-    /* 上下內邊距為10px，左右內邊距為0 */
+    padding: 10px 20px;
+    position: fixed;
+    /* 使頭部位置固定 */
+    top: 0;
+    /* 頭部固定在頁面頂部 */
+    width: 100%;
+    /* 佔滿整個寬度 */
+    z-index: 999;
+    /* 確保頭部位於其他元素之上 */
+    height: 55px;
+}
+
+/* 設置導覽列為絕對定位，並水平垂直居中 */
+nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 調整 logo 的大小 */
+.logo img {
+    max-width: 50px;
+    height: auto;
+    margin-bottom: 0px;
 }
 
 /* 導航樣式 */
@@ -64,6 +91,7 @@ nav ul li a:hover {
 .container {
     max-width: 800px;
     margin: 0 auto;
+    margin-bottom: 15px;
     padding: 20px;
     background-color: #fff;
     /* 白色背景 */
@@ -407,13 +435,73 @@ th {
     margin: 0 auto;
 }
 
+.brand-logo {
+    float: left;
+    /* 左浮動，使LOGO出現在文字左側 */
+    margin-right: 20px;
+    /* 右邊距，用於調整LOGO和文字之間的距離 */
+    margin-top: 20px;
+}
+
+.brand-logo img {
+    max-width: 100px;
+    /* 設定LOGO的最大寬度，根據需要調整 */
+    height: auto;
+    /* 根據寬度自動調整高度，保持比例 */
+}
+
 /* 響應式佈局 */
 @media screen and (max-width: 768px) {
+
+    /* 頂部樣式 - 減少上下內邊距 */
+    header {
+        padding: 5px 0;
+    }
+
+    /* 頁腳樣式 - 減少上下內邊距和文字大小 */
+    footer {
+        padding: 5px 0;
+    }
+
+    /* 主容器樣式 - 減少內邊距 */
     .container {
         padding: 10px;
     }
 
+    /* 產品卡片樣式 - 減少外邊距和圖像寬度 */
     .product-card {
         margin: 5px;
+        padding: 5px;
+    }
+
+    .product-card img {
+        width: 60%;
+        /* 調整圖像寬度 */
+    }
+
+    /* 頁尾連結樣式 - 減少間距和文字大小 */
+    .footer-links li {
+        margin-right: 5px;
+    }
+
+    .footer-links a {
+        font-size: 12px;
+    }
+
+    /* 品牌介紹樣式 - 減少內邊距 */
+    .brand-introduction {
+        padding: 10px;
+    }
+
+    /* 訂單卡片樣式 - 減少外邊距和增加內邊距 */
+    .order-card {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    /* 縮小LOGO */
+    .brand-logo img {
+        max-width: 80px;
+        /* 調整LOGO的最大寬度 */
     }
 }

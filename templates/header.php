@@ -1,4 +1,10 @@
 <header>
+    <div class="logo">
+        <a href="index.php">
+            <img src="./assets/images/scentselect-logo-white.png" alt="ScentSelect Logo">
+        </a>
+    </div>
+
     <nav>
         <ul>
             <li><a href="index.php">首頁</a></li>

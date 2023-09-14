@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScentSelect</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="./assets/images/scentselect-logo-color.png" type="image/x-icon">
 </head>
 <body>
     <!-- 網站標頭 -->
@@ -23,6 +24,9 @@
 
         <div class="brand-introduction">
             <h2>關於我們</h2>
+            <div class="brand-logo">
+                <img src="./assets/images/scentselect-logo.png" alt="ScentSelect">
+            </div>
             <p>ScentSelect 是一個專業的香氛品牌，我們致力於創造獨特且令人難忘的香氛體驗。我們的香水是由最優質的成分製成，並經過精心調配，以確保每一瓶都能帶給您奢華的感受。</p>
             <p>我們的使命是通過我們的香氛作品，讓您散發出自信和魅力，並在每個時刻都感到特別。無論您是在工作、約會還是特殊場合，ScentSelect 的香氛都將成為您的最佳選擇。</p>
             <p>謝謝您選擇 ScentSelect，我們期待為您提供卓越的香氛體驗。</p>

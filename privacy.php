@@ -10,6 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>隱私政策</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="./assets/images/scentselect-logo-color.png" type="image/x-icon">
 </head>
 <body>
     <!-- 網站頁頭 -->
