@@ -39,6 +39,7 @@ if (isset($_SESSION['user_id'])) {
             // 顯示送貨地址表單，用戶可以在這裡填寫送貨地址。
             echo '<h2>送貨地址</h2>';
             echo '<form action="order_process.php" method="post">';
+            echo '<input type="hidden" name="order_id" value="' . $orderNumber . '">';
             echo '<div class="form-group">';
             echo '<input type="text" id="delivery-address" name="delivery_address" placeholder="請輸入送貨地址">';
             echo '</div>';
@@ -76,6 +77,7 @@ if (isset($_SESSION['user_id'])) {
             if (!empty($_SESSION['cart'])) {
                 echo '<p>訂單總數：' . count($_SESSION['cart']) . '</p>';
                 echo '<p>總金額：$' . $totalAmount . '</p>';
+                echo '<input type="hidden" name="total_amount" value="' . $totalAmount . '">';
             }
             
             // 顯示支付選項，通常包括信用卡支付、PayPal等選項。
